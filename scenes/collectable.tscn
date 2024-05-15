@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://lmjp64svk2vg"]
+
+[ext_resource type="Texture2D" uid="uid://b2ufu5oaktuqb" path="res://diamond_animation_frames/diamond_big.png" id="1_a8kcn"]
+[ext_resource type="Script" path="res://scenes/collectable.gd" id="1_r3j06"]
+[ext_resource type="Texture2D" uid="uid://cmstqpd34lh6e" path="res://diamond_animation_frames/diamond_big_01.png" id="2_2rdvu"]
+[ext_resource type="Texture2D" uid="uid://cnnihwimodye8" path="res://diamond_animation_frames/diamond_big_02.png" id="3_mr2oy"]
+[ext_resource type="Texture2D" uid="uid://fyio4xrngk8l" path="res://diamond_animation_frames/diamond_big_03.png" id="4_ykgqd"]
+[ext_resource type="Texture2D" uid="uid://chmic3x36oln2" path="res://diamond_animation_frames/diamond_big_04.png" id="5_ggfbq"]
+[ext_resource type="Texture2D" uid="uid://dgjig1gw78k6h" path="res://diamond_animation_frames/diamond_big_05.png" id="6_p26qj"]
+[ext_resource type="Texture2D" uid="uid://baigdn0r7imh0" path="res://diamond_animation_frames/diamond_big_06.png" id="7_o7gip"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r483f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a8kcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2rdvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mr2oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ykgqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ggfbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p26qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o7gip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ga0vc"]
+radius = 32.0156
+
+[node name="Collectable" type="Area2D"]
+script = ExtResource("1_r3j06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8.34465e-07, -1)
+scale = Vector2(3.85714, 3.85714)
+sprite_frames = SubResource("SpriteFrames_r483f")
+frame_progress = 0.0847559
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_ga0vc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

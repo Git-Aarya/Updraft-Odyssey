@@ -108,7 +108,7 @@ position = Vector2(-0.2, 0.6)
 scale = Vector2(1.78125, 1.78125)
 sprite_frames = SubResource("SpriteFrames_yrmek")
 autoplay = "default"
-frame_progress = 0.70193
+frame_progress = 0.353434
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.2, -3.2)
