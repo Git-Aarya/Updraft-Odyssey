@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d373617melp7g"]
+[gd_scene load_steps=11 format=3 uid="uid://d373617melp7g"]
 
 [ext_resource type="Texture2D" uid="uid://cq4scdtda7ikl" path="res://R.jpg" id="1_5s5f2"]
 [ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://mainlev_build.png" id="2_5rldk"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="4_o8ha7"]
 [ext_resource type="PackedScene" uid="uid://lmjp64svk2vg" path="res://scenes/collectable.tscn" id="5_wrq37"]
 [ext_resource type="Script" path="res://game_manager.gd" id="6_gxfmg"]
+[ext_resource type="PackedScene" uid="uid://o8gfis37p8uk" path="res://scenes/flame.tscn" id="7_gl7db"]
+[ext_resource type="Texture2D" uid="uid://dcpnogarp2hd1" path="res://background4a.png" id="8_n6w83"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0ed5"]
 texture = ExtResource("2_5rldk")
@@ -2785,18 +2787,6 @@ sources/1 = SubResource("TileSetAtlasSource_g0ed5")
 
 [node name="Node" type="Node"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_repeat = 2
-offset_left = 1085.0
-offset_top = -2740.0
-offset_right = 5745.0
-offset_bottom = -1650.0
-rotation = 1.5708
-size_flags_vertical = 0
-texture = ExtResource("1_5s5f2")
-expand_mode = 1
-stretch_mode = 1
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(4.5, 4.5)
@@ -2819,3 +2809,32 @@ position = Vector2(906, 369)
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_gxfmg")
+
+[node name="Flame" parent="." instance=ExtResource("7_gl7db")]
+position = Vector2(193, 138)
+
+[node name="Flame2" parent="." instance=ExtResource("7_gl7db")]
+position = Vector2(720, 174)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="bg" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/bg"]
+texture_filter = 6
+position = Vector2(540.285, -447.709)
+rotation = 1.5708
+scale = Vector2(2.53616, 1.13214)
+texture = ExtResource("1_5s5f2")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(0, 1920)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(1104, -9.99997)
+rotation = 1.5708
+scale = Vector2(2.27488, 2.27488)
+texture = ExtResource("8_n6w83")
+centered = false

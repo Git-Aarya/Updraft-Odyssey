@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://o8gfis37p8uk"]
+
+[ext_resource type="Texture2D" uid="uid://ccdvysl4kcn82" path="res://IdleLoop-Sheet.png" id="1_55yam"]
+[ext_resource type="Script" path="res://scenes/flame.gd" id="1_rw74w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxyit"]
+atlas = ExtResource("1_55yam")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2oce"]
+atlas = ExtResource("1_55yam")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p3nv"]
+atlas = ExtResource("1_55yam")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_158f1"]
+atlas = ExtResource("1_55yam")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wjlg1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxyit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2oce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p3nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_158f1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iiaav"]
+radius = 44.0454
+
+[sub_resource type="Gradient" id="Gradient_y2w86"]
+offsets = PackedFloat32Array(0, 0.694805)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ibhs"]
+gradient = SubResource("Gradient_y2w86")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[node name="Flame" type="Area2D"]
+script = ExtResource("1_rw74w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.8239e-05, 1.52588e-05)
+scale = Vector2(7.96875, 7.96875)
+sprite_frames = SubResource("SpriteFrames_wjlg1")
+autoplay = "default"
+frame_progress = 0.810957
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_iiaav")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-0.999992, -2)
+scale = Vector2(7.83789, 7.40176)
+color = Color(0.494118, 0.196078, 0.141176, 1)
+energy = 1.15
+texture = SubResource("GradientTexture2D_4ibhs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
