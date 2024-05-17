@@ -6,27 +6,43 @@ const JUMP_VELOCITY = -950
 
 var facing_right = true  # Keeps track of which direction the character is facing
 var disengaged_from_wall = true  # Flag to check if character has moved away from the wall
+var is_dead = false  # Flag to indicate if the character is dead
+var game_started = false  # Flag to indicate if the game has started
+var wind_effect: float = 0.0
 
-# Get the gravity from the project settings.
+# Gravity
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	if is_dead or not game_started:
+		# If the character is dead or the game hasn't started, don't process movement or collisions
+		return
+
 	# Handle animations
+	if velocity.y < 0:
+		sprite_2d.animation = "flying"
+	else:
+		sprite_2d.animation = "idle"
+
+	# Apply gravity
 	if not is_on_floor():
-		#sprite_2d.animation = "jumping"
 		velocity.y += gravity * delta  # Properly use delta for gravity application
-	#else:
-		#sprite_2d.animation = "default"
+		# Apply wind effect
+		velocity.x += wind_effect * delta
 	
 	# Handle jumping and horizontal movement
-	if Input.is_action_just_pressed("tap"):
-		velocity.y = JUMP_VELOCITY
-		if facing_right:
-			velocity.x = SPEED
-		else:
-			velocity.x = -SPEED
+	if Input.is_action_just_pressed("right"):
+		move_right()
+	elif Input.is_action_just_pressed("left"):
+		move_left()
 
-	move_and_slide()  # Adjusted to have no arguments per your project's setup
+	# Move the character and check for collisions
+	var collision_info = move_and_collide(velocity * delta)
+	if collision_info:
+		# Check if the collider is in the "death" group
+		var collider = collision_info.get_collider()
+		if collider and collider.is_in_group("death"):
+			die()
 
 	# Check for wall collisions to change direction
 	var has_collided = false
@@ -44,6 +60,57 @@ func _physics_process(delta):
 	# Reset disengagement flag if no wall collision
 	if not has_collided:
 		disengaged_from_wall = true
+
+func move_right():
+	velocity.y = JUMP_VELOCITY
+	velocity.x = SPEED
+	facing_right = true
+	sprite_2d.flip_h = false  # Ensure the sprite faces right
+
+func move_left():
+	velocity.y = JUMP_VELOCITY
+	velocity.x = -SPEED
+	facing_right = false
+	sprite_2d.flip_h = true  # Ensure the sprite faces left
+
+func die():
+	if is_dead:
+		return  # Prevent the die function from being called multiple times
+
+	# Handle death animation
+	is_dead = true
+	sprite_2d.animation = "dying"
+
+func _input(event):
+	if is_dead:
+		# If the character is dead, wait for any input to reset the level
+		if event is InputEvent:
+			reset_game()
+	elif not game_started:
+		# If the game hasn't started, start the game on any input
+		if event is InputEvent:
+			game_started = true
+	else:
+		# Handle regular input
+		if event is InputEventScreenTouch and event.pressed:
+			if event.position.x < get_viewport_rect().size.x / 2:
+				move_left()
+			else:
+				move_right()
+
+func reset_game():
+	# Handle actual death logic, such as resetting the level or showing a game over screen
+	get_tree().reload_current_scene()
+
+
+
+
+
+
+
+
+
+
 
 
 

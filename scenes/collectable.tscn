@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://lmjp64svk2vg"]
 
-[ext_resource type="Texture2D" uid="uid://b2ufu5oaktuqb" path="res://diamond_animation_frames/diamond_big.png" id="1_a8kcn"]
+[ext_resource type="Texture2D" uid="uid://b2ufu5oaktuqb" path="res://animations/diamond_animation_frames/diamond_big.png" id="1_a8kcn"]
 [ext_resource type="Script" path="res://scenes/collectable.gd" id="1_r3j06"]
-[ext_resource type="Texture2D" uid="uid://cmstqpd34lh6e" path="res://diamond_animation_frames/diamond_big_01.png" id="2_2rdvu"]
-[ext_resource type="Texture2D" uid="uid://cnnihwimodye8" path="res://diamond_animation_frames/diamond_big_02.png" id="3_mr2oy"]
-[ext_resource type="Texture2D" uid="uid://fyio4xrngk8l" path="res://diamond_animation_frames/diamond_big_03.png" id="4_ykgqd"]
-[ext_resource type="Texture2D" uid="uid://chmic3x36oln2" path="res://diamond_animation_frames/diamond_big_04.png" id="5_ggfbq"]
-[ext_resource type="Texture2D" uid="uid://dgjig1gw78k6h" path="res://diamond_animation_frames/diamond_big_05.png" id="6_p26qj"]
-[ext_resource type="Texture2D" uid="uid://baigdn0r7imh0" path="res://diamond_animation_frames/diamond_big_06.png" id="7_o7gip"]
+[ext_resource type="Texture2D" uid="uid://cmstqpd34lh6e" path="res://animations/diamond_animation_frames/diamond_big_01.png" id="2_2rdvu"]
+[ext_resource type="Texture2D" uid="uid://cnnihwimodye8" path="res://animations/diamond_animation_frames/diamond_big_02.png" id="3_mr2oy"]
+[ext_resource type="Texture2D" uid="uid://fyio4xrngk8l" path="res://animations/diamond_animation_frames/diamond_big_03.png" id="4_ykgqd"]
+[ext_resource type="Texture2D" uid="uid://chmic3x36oln2" path="res://animations/diamond_animation_frames/diamond_big_04.png" id="5_ggfbq"]
+[ext_resource type="Texture2D" uid="uid://dgjig1gw78k6h" path="res://animations/diamond_animation_frames/diamond_big_05.png" id="6_p26qj"]
+[ext_resource type="Texture2D" uid="uid://baigdn0r7imh0" path="res://animations/diamond_animation_frames/diamond_big_06.png" id="7_o7gip"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r483f"]
 animations = [{

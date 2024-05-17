@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://o8gfis37p8uk"]
 
-[ext_resource type="Texture2D" uid="uid://ccdvysl4kcn82" path="res://IdleLoop-Sheet.png" id="1_55yam"]
+[ext_resource type="Texture2D" uid="uid://ccdvysl4kcn82" path="res://animations/flame_spirte_sheet/IdleLoop-Sheet.png" id="1_55yam"]
 [ext_resource type="Script" path="res://scenes/flame.gd" id="1_rw74w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxyit"]
