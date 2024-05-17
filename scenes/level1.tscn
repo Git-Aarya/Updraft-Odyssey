@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://d373617melp7g"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_veyvi"]
-[ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://mainlev_build.png" id="2_hl8ym"]
+[ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://TileMaps/mainlev_build.png" id="2_hl8ym"]
 [ext_resource type="PackedScene" uid="uid://wsssj1c6kb8q" path="res://scenes/main_character.tscn" id="3_bato4"]
 [ext_resource type="Texture2D" uid="uid://cunjvkh6gn8d3" path="res://backgrounds/bg v2.jpg" id="4_0a7ys"]
 [ext_resource type="Texture2D" uid="uid://dcpnogarp2hd1" path="res://backgrounds/background4a.png" id="5_q5buc"]

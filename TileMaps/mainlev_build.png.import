@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cti1kfuxr8md5"
-path="res://.godot/imported/01.png-2055f954c21eae71ed4b17f8ce71b910.ctex"
+uid="uid://dq70kvboe8b5b"
+path="res://.godot/imported/mainlev_build.png-3eb0b8d04401b662871c79df6bd6cf28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01.png"
-dest_files=["res://.godot/imported/01.png-2055f954c21eae71ed4b17f8ce71b910.ctex"]
+source_file="res://TileMaps/mainlev_build.png"
+dest_files=["res://.godot/imported/mainlev_build.png-3eb0b8d04401b662871c79df6bd6cf28.ctex"]
 
 [params]
 

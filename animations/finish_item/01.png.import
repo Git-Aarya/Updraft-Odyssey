@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq70kvboe8b5b"
-path="res://.godot/imported/mainlev_build.png-cb9110b344ba395cc433b79b4ca9fe9b.ctex"
+uid="uid://cti1kfuxr8md5"
+path="res://.godot/imported/01.png-0292979d69e0decc98b6db78be244a20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mainlev_build.png"
-dest_files=["res://.godot/imported/mainlev_build.png-cb9110b344ba395cc433b79b4ca9fe9b.ctex"]
+source_file="res://animations/finish_item/01.png"
+dest_files=["res://.godot/imported/01.png-0292979d69e0decc98b6db78be244a20.ctex"]
 
 [params]
 
