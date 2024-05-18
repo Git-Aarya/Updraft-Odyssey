@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://dls0s7pggp30h"]
 
 [ext_resource type="Texture2D" uid="uid://c3ys1i238jbau" path="res://animations/wind_animation_frames/W401-1.png" id="1_8ob3q"]
-[ext_resource type="Script" path="res://scenes/wind.gd" id="1_o4pid"]
+[ext_resource type="Script" path="res://scenes/wind_right.gd" id="1_o4pid"]
 [ext_resource type="Texture2D" uid="uid://denaql1papunp" path="res://animations/wind_animation_frames/W401-2.png" id="2_34m3m"]
 [ext_resource type="Texture2D" uid="uid://drb87xa4geo73" path="res://animations/wind_animation_frames/W401-3.png" id="3_qmmt4"]
 [ext_resource type="Texture2D" uid="uid://d42m61b7v0k" path="res://animations/wind_animation_frames/W401-4.png" id="4_v68qh"]
