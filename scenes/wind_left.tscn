@@ -81,6 +81,7 @@ size = Vector2(375, 148)
 script = ExtResource("1_nt2wd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_28h3s")
 autoplay = "default"
 frame_progress = 0.38034

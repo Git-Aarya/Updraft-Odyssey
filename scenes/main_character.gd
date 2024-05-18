@@ -115,3 +115,7 @@ func reset_game():
 
 
 
+
+
+func _on_flame_blue_body_entered(body):
+	pass # Replace with function body.
