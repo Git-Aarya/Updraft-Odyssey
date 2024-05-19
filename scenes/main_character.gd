@@ -10,6 +10,11 @@ var is_dead = false  # Flag to indicate if the character is dead
 var game_started = false  # Flag to indicate if the game has started
 var wind_effect: float = 0.0
 var is_stunned = false  # Flag to indicate if the character is stunned
+var in_safe_spot = false  # Flag to indicate if the character is in a safe spot
+var in_water = false  # Flag to indicate if the character is in water
+var speed: float = SPEED
+var water_speed: float = SPEED * 0.5
+var water_cooldown = false  # Cooldown flag for exiting water
 
 # Gravity
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -19,24 +24,41 @@ func _physics_process(delta):
 		# If the character is dead, stunned, or the game hasn't started, don't process movement or collisions
 		return
 
+	if in_safe_spot:
+		# Implement rest mechanics, e.g., regeneration, disabling movement, etc.
+		sprite_2d.animation = "swimming"
+		return
+
 	# Handle animations
 	if velocity.y < 0:
 		sprite_2d.animation = "flying"
+	elif velocity.y == 0:
+		sprite_2d.animation = "swimming"
 	else:
 		sprite_2d.animation = "idle"
 
-	# Apply gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta  # Properly use delta for gravity application
+	if in_water:
+		# Only allow movement based on player input, no gravity effect
+		velocity.y = 0
+		if Input.is_action_just_pressed("right"):
+			move_right()
+		elif Input.is_action_just_pressed("left"):
+			move_left()
+		else:
+			velocity.x = 0  # Stop horizontal movement if no input
+	else:
+		# Apply gravity
+		if not is_on_floor():
+			velocity.y += gravity * delta  # Properly use delta for gravity application
 
-	# Apply wind effect
-	velocity.x += wind_effect * delta
+		# Apply wind effect
+		velocity.x += wind_effect * delta
 
-	# Handle jumping and horizontal movement
-	if Input.is_action_just_pressed("right"):
-		move_right()
-	elif Input.is_action_just_pressed("left"):
-		move_left()
+		# Handle jumping and horizontal movement
+		if Input.is_action_just_pressed("right"):
+			move_right()
+		elif Input.is_action_just_pressed("left"):
+			move_left()
 
 	# Move the character and check for collisions
 	var collision_info = move_and_collide(velocity * delta)
@@ -64,14 +86,24 @@ func _physics_process(delta):
 		disengaged_from_wall = true
 
 func move_right():
-	velocity.y = JUMP_VELOCITY
-	velocity.x = SPEED
+	if in_water:
+		exit_water()
+		velocity.y = JUMP_VELOCITY
+		velocity.x = water_speed
+	else:
+		velocity.y = JUMP_VELOCITY
+		velocity.x = speed
 	facing_right = true
 	sprite_2d.flip_h = false  # Ensure the sprite faces right
 
 func move_left():
-	velocity.y = JUMP_VELOCITY
-	velocity.x = -SPEED
+	if in_water:
+		exit_water()
+		velocity.y = JUMP_VELOCITY
+		velocity.x = -water_speed
+	else:
+		velocity.y = JUMP_VELOCITY
+		velocity.x = -speed
 	facing_right = false
 	sprite_2d.flip_h = true  # Ensure the sprite faces left
 
@@ -109,4 +141,18 @@ func _input(event):
 func reset_game():
 	# Handle actual death logic, such as resetting the level or showing a game over screen
 	get_tree().reload_current_scene()
+
+# New function to handle exiting water with a cooldown
+func exit_water():
+	water_cooldown = true
+	in_water = false
+	await get_tree().create_timer(0.5).timeout  # 1.5 second cooldown
+	water_cooldown = false
+
+
+
+
+
+
+
 
