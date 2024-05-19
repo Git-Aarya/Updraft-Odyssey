@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wsssj1c6kb8q"]
+[gd_scene load_steps=21 format=3 uid="uid://wsssj1c6kb8q"]
 
 [ext_resource type="Script" path="res://scenes/main_character.gd" id="1_pa46u"]
 [ext_resource type="Texture2D" uid="uid://c48pc78a1l2li" path="res://animations/vampire_bat_sprite_sheets/BatVampire_Death.png" id="2_b1oys"]
@@ -52,6 +52,18 @@ region = Rect2(96, 0, 32, 32)
 atlas = ExtResource("2_b1oys")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycm87"]
+atlas = ExtResource("2_b1oys")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt5fh"]
+atlas = ExtResource("2_b1oys")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su5nb"]
+atlas = ExtResource("2_b1oys")
+region = Rect2(64, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_yrmek"]
 animations = [{
 "frames": [{
@@ -104,6 +116,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycm87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt5fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su5nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt5fh")
+}],
+"loop": true,
+"name": &"stunned",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_78gt1"]
@@ -119,8 +148,9 @@ texture_filter = 1
 position = Vector2(-0.2, 0.6)
 scale = Vector2(1.78125, 1.78125)
 sprite_frames = SubResource("SpriteFrames_yrmek")
-animation = &"idle"
+animation = &"stunned"
 autoplay = "flying"
+frame_progress = 0.628825
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.2, -3.2)

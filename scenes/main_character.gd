@@ -9,13 +9,14 @@ var disengaged_from_wall = true  # Flag to check if character has moved away fro
 var is_dead = false  # Flag to indicate if the character is dead
 var game_started = false  # Flag to indicate if the game has started
 var wind_effect: float = 0.0
+var is_stunned = false  # Flag to indicate if the character is stunned
 
 # Gravity
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	if is_dead or not game_started:
-		# If the character is dead or the game hasn't started, don't process movement or collisions
+	if is_dead or not game_started or is_stunned:
+		# If the character is dead, stunned, or the game hasn't started, don't process movement or collisions
 		return
 
 	# Handle animations
@@ -27,9 +28,10 @@ func _physics_process(delta):
 	# Apply gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta  # Properly use delta for gravity application
-		# Apply wind effect
-		velocity.x += wind_effect * delta
-	
+
+	# Apply wind effect
+	velocity.x += wind_effect * delta
+
 	# Handle jumping and horizontal movement
 	if Input.is_action_just_pressed("right"):
 		move_right()
@@ -81,6 +83,12 @@ func die():
 	is_dead = true
 	sprite_2d.animation = "dying"
 
+func stun():
+	is_stunned = true
+	sprite_2d.animation = "stunned"
+	await get_tree().create_timer(1.0).timeout
+	is_stunned = false
+
 func _input(event):
 	if is_dead:
 		# If the character is dead, wait for any input to reset the level
@@ -102,20 +110,3 @@ func reset_game():
 	# Handle actual death logic, such as resetting the level or showing a game over screen
 	get_tree().reload_current_scene()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-func _on_flame_blue_body_entered(body):
-	pass # Replace with function body.

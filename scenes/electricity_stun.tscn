@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://mr0ao48ex7uc"]
+
+[ext_resource type="Texture2D" uid="uid://o5xxx7onb7v1" path="res://animations/electricity_sprite_sheet/Eletric A-Sheet.png" id="1_8iink"]
+[ext_resource type="Script" path="res://scenes/electricity_stun.gd" id="1_i6y0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2csk"]
+atlas = ExtResource("1_8iink")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iyxs"]
+atlas = ExtResource("1_8iink")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sswau"]
+atlas = ExtResource("1_8iink")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7xnx"]
+atlas = ExtResource("1_8iink")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enoo0"]
+atlas = ExtResource("1_8iink")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h626d"]
+atlas = ExtResource("1_8iink")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf5g8"]
+atlas = ExtResource("1_8iink")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mocxj"]
+atlas = ExtResource("1_8iink")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcnlr"]
+atlas = ExtResource("1_8iink")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxqab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2csk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3iyxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sswau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7xnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enoo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h626d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf5g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mocxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcnlr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g5h8"]
+size = Vector2(109, 112)
+
+[node name="ElectricityStun" type="Area2D"]
+script = ExtResource("1_i6y0r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, 0.60577)
+scale = Vector2(1.96875, 1.32512)
+sprite_frames = SubResource("SpriteFrames_pxqab")
+autoplay = "default"
+frame_progress = 0.506159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_1g5h8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
