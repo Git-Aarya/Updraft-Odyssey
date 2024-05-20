@@ -3583,7 +3583,7 @@ layer_0/tile_data = PackedInt32Array(851968, 3407873, 53, 917504, 3407873, 54, 8
 
 [node name="CharacterBody2D" parent="SceneObjects" instance=ExtResource("3_bato4")]
 unique_name_in_owner = true
-position = Vector2(671, -15541)
+position = Vector2(555, 581)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="SceneObjects"]
 
