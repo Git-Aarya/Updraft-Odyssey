@@ -84,7 +84,7 @@ script = ExtResource("1_nt2wd")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_28h3s")
 autoplay = "default"
-frame_progress = 0.38034
+frame_progress = 0.321009
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14.5, 3)

@@ -9,6 +9,7 @@ var disengaged_from_wall = true  # Flag to check if character has moved away fro
 var is_dead = false  # Flag to indicate if the character is dead
 var game_started = false  # Flag to indicate if the game has started
 var wind_effect: float = 0.0
+var wind_updraft: float = 0.0
 var is_stunned = false  # Flag to indicate if the character is stunned
 var in_safe_spot = false  # Flag to indicate if the character is in a safe spot
 var in_water = false  # Flag to indicate if the character is in water
@@ -55,6 +56,9 @@ func _physics_process(delta):
 
 		# Apply wind effect
 		velocity.x += wind_effect * delta
+		
+		# Apply wind updraft
+		velocity.y += wind_updraft * delta
 
 		# Handle jumping and horizontal movement
 		if Input.is_action_just_pressed("right"):
