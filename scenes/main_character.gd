@@ -16,9 +16,11 @@ var speed: float = SPEED
 var water_speed: float = SPEED * 0.5
 var water_cooldown = false  # Cooldown flag for exiting water
 
+
 # Gravity
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+	
 func _physics_process(delta):
 	if is_dead or not game_started or is_stunned:
 		# If the character is dead, stunned, or the game hasn't started, don't process movement or collisions
@@ -148,6 +150,23 @@ func exit_water():
 	in_water = false
 	await get_tree().create_timer(0.5).timeout  # 1.5 second cooldown
 	water_cooldown = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

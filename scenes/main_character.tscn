@@ -181,7 +181,7 @@ texture_filter = 1
 position = Vector2(-0.2, 0.6)
 scale = Vector2(1.78125, 1.78125)
 sprite_frames = SubResource("SpriteFrames_yrmek")
-animation = &"stunned"
+animation = &"flying"
 autoplay = "flying"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

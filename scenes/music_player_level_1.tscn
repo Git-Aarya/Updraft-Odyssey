@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdaleyoanmycq"]
+
+[ext_resource type="AudioStream" uid="uid://86355veiikfx" path="res://music/level1 - Hide - Dorian Concept (Slowed x Reverbed).mp3" id="1_bxu56"]
+
+[node name="MusicPlayerLevel1" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_bxu56")
+autoplay = true

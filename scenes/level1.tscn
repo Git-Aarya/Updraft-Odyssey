@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://d373617melp7g"]
+[gd_scene load_steps=59 format=3 uid="uid://d373617melp7g"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_veyvi"]
 [ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://TileMaps/mainlev_build.png" id="2_hl8ym"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bqy1j8wpa1ryy" path="res://scenes/wind_left.tscn" id="9_vmr0f"]
 [ext_resource type="PackedScene" uid="uid://c6j8aab537a72" path="res://scenes/flame_blue.tscn" id="10_hqpid"]
 [ext_resource type="PackedScene" uid="uid://mr0ao48ex7uc" path="res://scenes/electricity_stun.tscn" id="12_eh4yp"]
+[ext_resource type="PackedScene" uid="uid://cdaleyoanmycq" path="res://scenes/music_player_level_1.tscn" id="16_anpv4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5odlx"]
 atlas = ExtResource("2_u0bah")
@@ -3968,6 +3969,9 @@ position = Vector2(268, -11364)
 
 [node name="ElectricityStun2" parent="SceneObjects/Obstacles/Stage2" instance=ExtResource("12_eh4yp")]
 position = Vector2(798, -12622)
+
+[node name="MusicPlayerLevel1" parent="." instance=ExtResource("16_anpv4")]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="SceneObjects/SafeSpot/WaterTile" to="SceneObjects/SafeSpot/WaterTile" method="_on_body_entered"]
 [connection signal="body_exited" from="SceneObjects/SafeSpot/WaterTile" to="SceneObjects/SafeSpot/WaterTile" method="_on_body_exited"]
