@@ -1,5 +1,6 @@
-[gd_scene load_steps=60 format=3 uid="uid://d373617melp7g"]
+[gd_scene load_steps=61 format=3 uid="uid://d373617melp7g"]
 
+[ext_resource type="PackedScene" uid="uid://cgs5ck08yu4gw" path="res://scenes/death_screen_level1.tscn" id="1_l0s5o"]
 [ext_resource type="Script" path="res://game_manager.gd" id="1_veyvi"]
 [ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://TileMaps/mainlev_build.png" id="2_hl8ym"]
 [ext_resource type="Script" path="res://scenes/water_tile.gd" id="2_n8xn0"]
@@ -3547,6 +3548,11 @@ unique_name_in_owner = true
 script = ExtResource("1_veyvi")
 
 [node name="SceneObjects" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SceneObjects"]
+
+[node name="DeathScreen" parent="SceneObjects/CanvasLayer" instance=ExtResource("1_l0s5o")]
+unique_name_in_owner = true
 
 [node name="SafeSpot" type="Node" parent="SceneObjects"]
 

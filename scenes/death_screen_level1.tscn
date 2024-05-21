@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgs5ck08yu4gw"]
+
+[ext_resource type="Script" path="res://scenes/all_screen_button.gd" id="1_ayscc"]
+[ext_resource type="Texture2D" uid="uid://dfspr80n5ed2x" path="res://GUI/Buttons/restart_icon.png" id="1_il417"]
+[ext_resource type="Texture2D" uid="uid://dj3h1jaeswh70" path="res://GUI/Buttons/home_icon.png" id="2_6p0wx"]
+[ext_resource type="Script" path="res://scenes/restart_button.gd" id="2_juycc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AllScreenButton" type="Button" parent="."]
+modulate = Color(0, 0, 0, 0.454902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ayscc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -472.0
+offset_right = 1080.0
+offset_bottom = 46.0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.278431)
+
+[node name="GameOverLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.0
+offset_top = 584.0
+offset_right = 259.0
+offset_bottom = 701.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 68
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = 79.5
+offset_right = 231.0
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Tap anywhere to play again"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -148.0
+offset_right = -12.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_il417")
+script = ExtResource("2_juycc")
+
+[node name="HomeButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -150.0
+offset_right = 542.0
+offset_bottom = 358.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("2_6p0wx")
+
+[connection signal="pressed" from="AllScreenButton" to="AllScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]
