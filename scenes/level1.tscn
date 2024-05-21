@@ -3541,7 +3541,7 @@ _data = {
 }
 point_count = 2
 
-[node name="Node" type="Node"]
+[node name="Level1" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
