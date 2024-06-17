@@ -13,6 +13,7 @@ config_version=5
 config/name="Updraft Odyssey"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://logo/logo.png"
 
 [autoload]
@@ -29,6 +30,7 @@ window/size/window_height_override=1280
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
+window/ios/allow_high_refresh_rate=false
 
 [input]
 
@@ -61,4 +63,4 @@ pointing/emulate_touch_from_mouse=true
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0.14902, 0.12549, 0.137255, 1)
+environment/defaults/default_clear_color=Color(0.0784314, 0.0627451, 0.0705882, 1)
