@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgs5ck08yu4gw"]
+[gd_scene load_steps=6 format=3 uid="uid://cgs5ck08yu4gw"]
 
 [ext_resource type="Script" path="res://scenes/all_screen_button.gd" id="1_ayscc"]
 [ext_resource type="Texture2D" uid="uid://dfspr80n5ed2x" path="res://GUI/Buttons/restart_icon.png" id="1_il417"]
 [ext_resource type="Texture2D" uid="uid://dj3h1jaeswh70" path="res://GUI/Buttons/home_icon.png" id="2_6p0wx"]
 [ext_resource type="Script" path="res://scenes/restart_button.gd" id="2_juycc"]
+[ext_resource type="Script" path="res://scenes/home_button.gd" id="5_ty7cl"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -85,6 +86,7 @@ offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("1_il417")
+flat = true
 script = ExtResource("2_juycc")
 
 [node name="HomeButton" type="Button" parent="."]
@@ -103,6 +105,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 icon = ExtResource("2_6p0wx")
+flat = true
+script = ExtResource("5_ty7cl")
 
 [connection signal="pressed" from="AllScreenButton" to="AllScreenButton" method="_on_pressed"]
 [connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]
+[connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]
