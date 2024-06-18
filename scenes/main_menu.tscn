@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqcexm2dvlxom"]
+[gd_scene load_steps=13 format=3 uid="uid://dqcexm2dvlxom"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_uqipm"]
+[ext_resource type="Texture2D" uid="uid://b4xloqhhcxfna" path="res://GUI/Buttons/credit_logo.png" id="3_rvdh0"]
 [ext_resource type="Texture2D" uid="uid://lsyecup8g06y" path="res://logo/logo.png" id="3_xuohb"]
+[ext_resource type="Script" path="res://scenes/credits_button.gd" id="4_cxi36"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xoxr1"]
 bg_color = Color(0.894118, 0.894118, 0.894118, 1)
@@ -49,6 +51,35 @@ Button/styles/hover = SubResource("StyleBoxFlat_xoxr1")
 Button/styles/normal = SubResource("StyleBoxFlat_c42ln")
 Button/styles/pressed = SubResource("StyleBoxFlat_k51ng")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3ckc"]
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghy0c"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg5sm"]
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="Theme" id="Theme_tjo2r"]
+Button/styles/hover = SubResource("StyleBoxFlat_p3ckc")
+Button/styles/normal = SubResource("StyleBoxFlat_ghy0c")
+Button/styles/pressed = SubResource("StyleBoxFlat_wg5sm")
+
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_uqipm")
 
@@ -60,7 +91,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="Logo" type="TextureRect" parent="."]
 anchors_preset = 5
@@ -97,4 +128,23 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 50
 text = "PLAY"
 
+[node name="CreditsButton" type="Button" parent="Buttons"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -121.0
+offset_top = -120.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_tjo2r")
+icon = ExtResource("3_rvdh0")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("4_cxi36")
+
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Buttons/CreditsButton" to="Buttons/CreditsButton" method="_on_pressed"]
