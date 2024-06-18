@@ -1,7 +1,6 @@
-[gd_scene load_steps=62 format=3 uid="uid://d373617melp7g"]
+[gd_scene load_steps=61 format=3 uid="uid://d373617melp7g"]
 
 [ext_resource type="PackedScene" uid="uid://cgs5ck08yu4gw" path="res://scenes/death_screen_level1.tscn" id="1_l0s5o"]
-[ext_resource type="Script" path="res://game_manager.gd" id="1_veyvi"]
 [ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://TileMaps/mainlev_build.png" id="2_hl8ym"]
 [ext_resource type="Script" path="res://scenes/water_tile.gd" id="2_n8xn0"]
 [ext_resource type="Texture2D" uid="uid://kosac0ucoq4v" path="res://backgrounds/water/Water Tile.png" id="2_u0bah"]
@@ -3462,10 +3461,6 @@ point_count = 2
 
 [node name="Level1" type="Node"]
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_veyvi")
-
 [node name="SceneObjects" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SceneObjects"]
@@ -3660,12 +3655,12 @@ position = Vector2(477, -19636)
 [node name="flame_blue6" parent="SceneObjects/Obstacles/Stage2" instance=ExtResource("10_hqpid")]
 position = Vector2(299, -19857)
 
+[node name="FinishPoint" parent="SceneObjects/Obstacles" instance=ExtResource("19_321x7")]
+position = Vector2(541, -20717)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SceneObjects"]
 stream = ExtResource("16_yv0jg")
 autoplay = true
-
-[node name="FinishPoint" parent="SceneObjects" instance=ExtResource("19_321x7")]
-position = Vector2(541, -20717)
 
 [connection signal="body_entered" from="SceneObjects/SafeSpot/WaterTile" to="SceneObjects/SafeSpot/WaterTile" method="_on_body_entered"]
 [connection signal="body_exited" from="SceneObjects/SafeSpot/WaterTile" to="SceneObjects/SafeSpot/WaterTile" method="_on_body_exited"]

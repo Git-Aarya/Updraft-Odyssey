@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://0qccdqb8msqp"]
+
+[ext_resource type="Texture2D" uid="uid://dj3h1jaeswh70" path="res://GUI/Buttons/home_icon.png" id="4_1hwfj"]
+[ext_resource type="Script" path="res://scenes/home_button.gd" id="5_uheag"]
+
+[sub_resource type="GDScript" id="GDScript_y27ne"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+ 
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_y27ne")
+
+[node name="AllScreenButton" type="Button" parent="."]
+modulate = Color(0, 0, 0, 0.454902)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -472.0
+offset_right = 1080.0
+offset_bottom = 46.0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.278431)
+
+[node name="GameOverLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.0
+offset_top = 584.0
+offset_right = 259.0
+offset_bottom = 701.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 68
+text = "LEVEL COMPLETED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -214.0
+offset_right = 453.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("4_1hwfj")
+flat = true
+script = ExtResource("5_uheag")
+
+[connection signal="pressed" from="AllScreenButton" to="AllScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]
