@@ -94,14 +94,17 @@ grow_vertical = 2
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="Logo" type="TextureRect" parent="."]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -402.0
-offset_top = 2.0
-offset_right = 403.0
-offset_bottom = 807.0
+anchor_bottom = 0.5
+offset_left = -402.5
+offset_top = -898.5
+offset_right = 402.5
+offset_bottom = -93.5
 grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_xuohb")
 expand_mode = 1
 
@@ -134,10 +137,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -121.0
-offset_top = -120.0
-offset_right = -24.0
-offset_bottom = -24.0
+offset_left = -145.0
+offset_top = -144.0
+offset_right = -48.0
+offset_bottom = -48.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_tjo2r")
