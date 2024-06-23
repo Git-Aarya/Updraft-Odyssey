@@ -21,7 +21,7 @@ var water_speed: float = SPEED * 0.5
 var water_cooldown = false  # Cooldown flag for exiting water
 
 # Starting position
-var start_position: Vector2 = Vector2(555, -11750) #Original 555,581
+var start_position: Vector2 = Vector2(555, 581) #Original 555,581
 
 # Gravity
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

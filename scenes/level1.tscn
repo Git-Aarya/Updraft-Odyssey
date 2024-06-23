@@ -3512,7 +3512,7 @@ position = Vector2(555, 581)
 
 [node name="DeathSFXPlayer" type="AudioStreamPlayer2D" parent="SceneObjects/CharacterBody2D"]
 stream = ExtResource("8_mmkoy")
-volume_db = -44.0
+volume_db = -33.195
 bus = &"SFX"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="SceneObjects"]

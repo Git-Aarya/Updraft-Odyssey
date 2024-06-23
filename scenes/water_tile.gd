@@ -12,7 +12,6 @@ func _on_body_entered(body):
 		body.in_water = true
 		
 	
-	
 func _on_body_exited(body):
 	if (body.name == "CharacterBody2D"):
 		water_sfx_player.play()
