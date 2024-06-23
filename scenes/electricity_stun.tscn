@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://mr0ao48ex7uc"]
+[gd_scene load_steps=15 format=3 uid="uid://mr0ao48ex7uc"]
 
 [ext_resource type="Texture2D" uid="uid://o5xxx7onb7v1" path="res://animations/electricity_sprite_sheet/Eletric A-Sheet.png" id="1_8iink"]
 [ext_resource type="Script" path="res://scenes/electricity_stun.gd" id="1_i6y0r"]
+[ext_resource type="AudioStream" uid="uid://qw5sjo6n5jnd" path="res://VFX/stun_sfx.mp3" id="3_0qiej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2csk"]
 atlas = ExtResource("1_8iink")
@@ -92,5 +93,8 @@ frame_progress = 0.506159
 texture_filter = 1
 position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_1g5h8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0qiej")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

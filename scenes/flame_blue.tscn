@@ -1,7 +1,8 @@
-[gd_scene load_steps=67 format=3 uid="uid://c6j8aab537a72"]
+[gd_scene load_steps=68 format=3 uid="uid://c6j8aab537a72"]
 
 [ext_resource type="Script" path="res://scenes/flame_blue.gd" id="1_7srbt"]
 [ext_resource type="Texture2D" uid="uid://b2kvth5d3itk0" path="res://animations/flame_blue_sprite_sheet/Small_Iceball_9x24.png" id="1_45ykk"]
+[ext_resource type="AudioStream" uid="uid://ccoqrq5sigrpf" path="res://VFX/burning_sfx.mp3" id="3_djmn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slcq0"]
 atlas = ExtResource("1_45ykk")
@@ -467,5 +468,9 @@ scale = Vector2(7.8, 7.4)
 color = Color(0.117647, 0.14902, 0.286275, 1)
 energy = 1.15
 texture = SubResource("GradientTexture2D_u1crp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_djmn3")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

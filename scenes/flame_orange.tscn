@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://o8gfis37p8uk"]
+[gd_scene load_steps=12 format=3 uid="uid://o8gfis37p8uk"]
 
 [ext_resource type="Texture2D" uid="uid://ccdvysl4kcn82" path="res://animations/flame_spirte_sheet/IdleLoop-Sheet.png" id="1_55yam"]
 [ext_resource type="Script" path="res://scenes/flame_orange.gd" id="1_rw74w"]
+[ext_resource type="AudioStream" uid="uid://ccoqrq5sigrpf" path="res://VFX/burning_sfx.mp3" id="3_3e06l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxyit"]
 atlas = ExtResource("1_55yam")
@@ -73,5 +74,9 @@ scale = Vector2(7.83789, 7.40176)
 color = Color(0.494118, 0.196078, 0.141176, 1)
 energy = 1.15
 texture = SubResource("GradientTexture2D_4ibhs")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3e06l")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

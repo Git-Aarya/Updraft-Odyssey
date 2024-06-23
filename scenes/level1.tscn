@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://d373617melp7g"]
+[gd_scene load_steps=61 format=3 uid="uid://d373617melp7g"]
 
 [ext_resource type="PackedScene" uid="uid://cgs5ck08yu4gw" path="res://scenes/death_screen_level1.tscn" id="1_l0s5o"]
 [ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://TileMaps/mainlev_build.png" id="2_hl8ym"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wsssj1c6kb8q" path="res://scenes/main_character.tscn" id="3_bato4"]
 [ext_resource type="Texture2D" uid="uid://bhg28obrjaqdi" path="res://backgrounds/water/WaterFall Tile Middle.png" id="3_c7xfc"]
 [ext_resource type="Texture2D" uid="uid://cunjvkh6gn8d3" path="res://backgrounds/bg v2.jpg" id="4_0a7ys"]
+[ext_resource type="AudioStream" uid="uid://dkspbtt4e0lot" path="res://VFX/water_splash_sfx.mp3" id="5_n68rc"]
 [ext_resource type="Texture2D" uid="uid://dcpnogarp2hd1" path="res://backgrounds/background4a.png" id="5_q5buc"]
 [ext_resource type="Script" path="res://camera/CameraFollow.gd" id="6_yqv01"]
 [ext_resource type="PackedScene" uid="uid://o8gfis37p8uk" path="res://scenes/flame_orange.tscn" id="7_0kjdq"]
@@ -3482,6 +3483,10 @@ frame_progress = 0.284308
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/SafeSpot/WaterTile"]
 position = Vector2(298, -12838.5)
 shape = SubResource("RectangleShape2D_lofyf")
+
+[node name="WaterSFXPlayer" type="AudioStreamPlayer2D" parent="SceneObjects/SafeSpot/WaterTile"]
+stream = ExtResource("5_n68rc")
+bus = &"SFX"
 
 [node name="WaterMid" type="Area2D" parent="SceneObjects/SafeSpot"]
 
