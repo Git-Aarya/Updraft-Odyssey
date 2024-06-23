@@ -2,7 +2,6 @@ extends Area2D
 @onready var character_body_2d = %CharacterBody2D
 @onready var water_sfx_player = $WaterSFXPlayer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

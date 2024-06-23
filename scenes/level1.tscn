@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://d373617melp7g"]
+[gd_scene load_steps=62 format=3 uid="uid://d373617melp7g"]
 
 [ext_resource type="PackedScene" uid="uid://cgs5ck08yu4gw" path="res://scenes/death_screen_level1.tscn" id="1_l0s5o"]
 [ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://TileMaps/mainlev_build.png" id="2_hl8ym"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://o8gfis37p8uk" path="res://scenes/flame_orange.tscn" id="7_0kjdq"]
 [ext_resource type="Texture2D" uid="uid://bs4fnb00igt35" path="res://backgrounds/background3.png" id="8_1kb0u"]
 [ext_resource type="PackedScene" uid="uid://dls0s7pggp30h" path="res://scenes/wind_right.tscn" id="8_ckkhk"]
+[ext_resource type="AudioStream" uid="uid://fym4jk4b46t5" path="res://VFX/death_vfx.mp3" id="8_mmkoy"]
 [ext_resource type="PackedScene" uid="uid://bqy1j8wpa1ryy" path="res://scenes/wind_left.tscn" id="9_vmr0f"]
 [ext_resource type="PackedScene" uid="uid://c6j8aab537a72" path="res://scenes/flame_blue.tscn" id="10_hqpid"]
 [ext_resource type="PackedScene" uid="uid://mr0ao48ex7uc" path="res://scenes/electricity_stun.tscn" id="12_eh4yp"]
@@ -3508,6 +3509,11 @@ layer_0/tile_data = PackedInt32Array(851968, 3407873, 53, 917504, 3407873, 54, 8
 [node name="CharacterBody2D" parent="SceneObjects" instance=ExtResource("3_bato4")]
 unique_name_in_owner = true
 position = Vector2(555, 581)
+
+[node name="DeathSFXPlayer" type="AudioStreamPlayer2D" parent="SceneObjects/CharacterBody2D"]
+stream = ExtResource("8_mmkoy")
+volume_db = -44.0
+bus = &"SFX"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="SceneObjects"]
 

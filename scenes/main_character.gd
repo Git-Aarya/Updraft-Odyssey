@@ -4,6 +4,8 @@ const SPEED = 450.0
 const JUMP_VELOCITY = -950
 @onready var sprite_2d = $Sprite2D
 @onready var death_screen = %DeathScreen
+@onready var death_sfx_player = $DeathSFXPlayer
+
 
 var facing_right = true  # Keeps track of which direction the character is facing
 var disengaged_from_wall = true  # Flag to check if character has moved away from the wall
@@ -111,6 +113,7 @@ func move_right():
 	if in_water:
 		exit_water()
 		velocity.x = water_speed
+		velocity.y = JUMP_VELOCITY
 	else:
 		velocity.y = JUMP_VELOCITY
 		velocity.x = speed
@@ -121,6 +124,7 @@ func move_left():
 	if in_water:
 		exit_water()
 		velocity.x = -water_speed
+		velocity.y = JUMP_VELOCITY
 	else:
 		velocity.y = JUMP_VELOCITY
 		velocity.x = -speed
@@ -135,6 +139,7 @@ func die():
 	is_dead = true
 	sprite_2d.animation = "dying"
 	game_started = false
+	death_sfx_player.play()
 	show_death_screen()
 
 func stun():
