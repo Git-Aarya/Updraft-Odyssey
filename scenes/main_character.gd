@@ -172,7 +172,7 @@ func reset_player():
 func exit_water():
 	water_cooldown = true
 	in_water = false
-	await get_tree().create_timer(1.5).timeout  # 1.5 second cooldown
+	await get_tree().create_timer(0.5).timeout  # 1.5 second cooldown
 	water_cooldown = false
 
 # Function to show the death screen

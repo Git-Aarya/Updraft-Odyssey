@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjghlj5b6ox2d"]
+
+[ext_resource type="AudioStream" uid="uid://dd5og42ts387m" path="res://music/HIBERNATION.mp3" id="1_hffav"]
+
+[node name="BgMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_hffav")
+autoplay = true
+bus = &"Bg Music"

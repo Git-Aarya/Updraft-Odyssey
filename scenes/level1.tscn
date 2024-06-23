@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://d373617melp7g"]
+[gd_scene load_steps=60 format=3 uid="uid://d373617melp7g"]
 
 [ext_resource type="PackedScene" uid="uid://cgs5ck08yu4gw" path="res://scenes/death_screen_level1.tscn" id="1_l0s5o"]
 [ext_resource type="Texture2D" uid="uid://dq70kvboe8b5b" path="res://TileMaps/mainlev_build.png" id="2_hl8ym"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bqy1j8wpa1ryy" path="res://scenes/wind_left.tscn" id="9_vmr0f"]
 [ext_resource type="PackedScene" uid="uid://c6j8aab537a72" path="res://scenes/flame_blue.tscn" id="10_hqpid"]
 [ext_resource type="PackedScene" uid="uid://mr0ao48ex7uc" path="res://scenes/electricity_stun.tscn" id="12_eh4yp"]
-[ext_resource type="AudioStream" uid="uid://86355veiikfx" path="res://music/level1 - Hide - Dorian Concept (Slowed x Reverbed).mp3" id="16_yv0jg"]
 [ext_resource type="PackedScene" uid="uid://b4n17v4bekidb" path="res://scenes/wind_up.tscn" id="17_lyalb"]
 [ext_resource type="PackedScene" uid="uid://cdprdsnsvsdh5" path="res://scenes/finish_point.tscn" id="19_321x7"]
 
@@ -3657,10 +3656,6 @@ position = Vector2(299, -19857)
 
 [node name="FinishPoint" parent="SceneObjects/Obstacles" instance=ExtResource("19_321x7")]
 position = Vector2(541, -20717)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SceneObjects"]
-stream = ExtResource("16_yv0jg")
-autoplay = true
 
 [connection signal="body_entered" from="SceneObjects/SafeSpot/WaterTile" to="SceneObjects/SafeSpot/WaterTile" method="_on_body_entered"]
 [connection signal="body_exited" from="SceneObjects/SafeSpot/WaterTile" to="SceneObjects/SafeSpot/WaterTile" method="_on_body_exited"]
