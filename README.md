@@ -40,4 +40,4 @@ Immerse yourself in the game's atmosphere with carefully crafted **sound effects
 
 Enjoy your journey through the cave, and good luck helping the bat escape!
 
-[![Gameplay](https://www.youtube.com/shorts/5WpsDI5CkCk)
+[![Gameplay Updraft Odyssey](https://img.youtube.com/vi/5WpsDI5CkCk/maxresdefault.jpg)](https://www.youtube.com/shorts/5WpsDI5CkCk)
